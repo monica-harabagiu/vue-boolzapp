@@ -77,6 +77,8 @@
                                 <!-- ACCOUNTS -->
                                 <div 
                                 v-for="(element, index) in contacts"
+                                @click="changeChat(index)"
+                                :class="(currentChat == index) ? 'active-chat' : '' "
                                 class="account d-flex p-2 ">
                                     <figure class="avatars mb-0 me-2 ">
                                         <img class="img-fluid rounded-circle" :src="element.avatar"
@@ -92,95 +94,6 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
 
@@ -215,14 +128,19 @@
                             <!-- CURRENT CHAT -->
                             <div id="current-chat" class="flex-grow-1 overflow-scroll ">
 
-                                <div class="d-flex justify-content-end ">
-                                    <div class="message sent-message p-2 rounded position-relative ">
-                                        <span class="message-text">Hai portato a spasso il cane?</span>
-                                        <span class="position-absolute time">15:30</span>
+                                <div
+                                v-for="(element, index) in contacts[currentChat].messages"
+                                :class="(element.status == 'sent') ? 'justify-content-end' : 'justify-content-start'"
+                                class="d-flex">
+                                    <div 
+                                    :class="(element.status == 'sent') ? 'sent-message' : 'received-message'"
+                                    class="message p-2 rounded position-relative ">
+                                        <span class="message-text">{{element.message}}</span>
+                                        <span class="position-absolute time">{{element.date}}</span>
                                     </div>
                                 </div>
 
-                                <div class="d-flex justify-content-end ">
+                                <!-- <div class="d-flex justify-content-end ">
                                     <div class="message sent-message p-2 rounded position-relative ">
                                         <span class="message-text">Ricordati di stendere i panni</span>
                                         <span class="position-absolute time">15:50</span>
@@ -230,11 +148,11 @@
                                 </div>
 
                                 <div class="d-flex justify-content-start">
-                                    <div class="message recieved-message p-2 rounded position-relative ">
+                                    <div class="message received-message p-2 rounded position-relative ">
                                         <span class="message-text">Tutto fatto!</span>
                                         <span class="position-absolute time">16:15</span>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
 
