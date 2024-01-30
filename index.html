@@ -108,11 +108,11 @@
 
                                 <div class="d-flex gap-2 align-items-center ">
                                     <figure class="avatars mb-0">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                        <img class="img-fluid rounded-circle" :src="contacts[currentChat].avatar"
                                             alt="account profile picture">
                                     </figure>
                                     <div>
-                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 ">{{contacts[currentChat].name}}</p>
                                         <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo accesso oggi alle 12:00
                                         </p>
                                     </div>
