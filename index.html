@@ -75,7 +75,24 @@
                             <div id="chats-list" class="bg-white overflow-y-scroll">
 
                                 <!-- ACCOUNTS -->
-                                <div class="account d-flex p-2 ">
+                                <div 
+                                v-for="(element, index) in contacts"
+                                class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" :src="element.avatar"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">{{element.name}}</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="account d-flex p-2 ">
                                     <figure class="avatars mb-0 me-2 ">
                                         <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
                                             alt="account profile picture">
@@ -163,22 +180,7 @@
                                     <div>
                                         <span class="text-secondary text-opacity-50 small-text">12:00</span>
                                     </div>
-                                </div>
-
-                                <div class="account d-flex p-2 ">
-                                    <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
-                                            alt="account profile picture">
-                                    </figure>
-                                    <div class="flex-grow-1 ">
-                                        <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
