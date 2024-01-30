@@ -1,0 +1,95 @@
+main {
+    background: rgb(219,219,211);
+    background: linear-gradient(0deg, rgba(219,219,211,1) 0%, rgba(219,219,211,1) 32%, rgba(219,219,211,1) 80%, rgba(0,150,136,1) 80%, rgba(0,150,136,1) 100%);
+    height: 100vh;
+    font-family: "Lato", sans-serif;
+}
+
+#window {
+    height: calc(100vh - 6rem);
+}
+
+#first-block-left {
+    height: 176px;
+}
+
+#chats-list {
+    height: calc(100vh - 6rem - 176px);
+    overflow: hidden;
+}
+
+.account:hover {
+    background-color: #E9EBEB;
+}
+
+.avatars {
+    width: 50px;
+}
+
+.section-headers {
+    background-color: #EAEAEA;
+}
+
+i {
+    color: #B1B1B1;
+}
+
+#notification-badges {
+    background-color: #8EDAFC;
+}
+
+#sound-badge {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: 10px;
+}
+
+#sound-badge i {
+    color: #8EDAFC;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+#header-right {
+    height: 66px;
+}
+
+#current-chat {
+    background-image: url(../img/mine.jpg);
+    padding: 30px;
+}
+
+#current-chat .message {
+    font-size: .8rem;
+    max-width: 40%;
+    min-width: 30%;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+#current-chat .sent-message {
+    background-color: #D5F9BA;
+}
+
+#current-chat .recieved-message {
+    background-color: white;
+}
+
+#current-chat .time {
+    bottom: 2px;
+    right: 4px;
+    font-size: .5rem;
+    color: #B1B1B1;
+}
+
+#current-chat .sent-message .message-text {
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+#message-input {
+    height: 66px;
+    background-color: #EAEAEA;
+}

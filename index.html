@@ -8,11 +8,251 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <div id="app">
+
+        <main class="container-fluid ">
+
+            <div class="row justify-content-center ">
+                <div id="window" class="col-10 my-5 ">
+                    <div class="row row-cols-2 gap-0">
+
+
+                        <!-- SECTION LEFT COLUMN START ----------------------------------------------------------->
+                        <div class="col-4 px-0 bg-white overflow-hidden d-flex flex-column ">
+                            <div id="first-block-left">
+
+                                <!-- HEADER -->
+                                <div class="d-flex justify-content-between align-content-center p-2  section-headers">
+                                    <div class="d-flex gap-2 align-items-center ">
+                                        <figure class="avatars mb-0">
+                                            <img class="img-fluid rounded-circle" src="./img/avatar_io.jpg"
+                                                alt="account profile picture">
+                                        </figure>
+                                        <p class="mb-0 ">Sofia</p>
+                                    </div>
+                                    <div class="d-flex gap-3 align-items-center pe-2 ">
+                                        <i class="fa-solid fa-circle-notch"></i>
+                                        <i class="fa-solid fa-message"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+
+                                <!-- NOTIFICATIONS -->
+                                <div id="notification-badges" class="d-flex py-2 px-3 align-items-center ">
+                                    <div>
+                                        <div id="sound-badge"
+                                            class="d-flex align-content-center justify-content-center bg-white">
+                                            <i class="fa-solid fa-bell-slash text-center"></i>
+                                        </div>
+                                    </div>
+
+                                    <div id="notification-text" class="mx-2">
+                                        <p class="mb-0 ">Ricevi notifiche di nuovi messaggi</p>
+                                        <span class="text-decoration-underline text-secondary mb-0 small-text">Attiva notifiche
+                                            desktop</span>
+                                    </div>
+                                </div>
+
+                                <!-- SEARCH -->
+                                <div class="p-1 bg-body-secondary bg-opacity-50  ">
+                                    <div role="search" class="d-flex bg-white w-100 rounded">
+                                        <div id="search-bar" class="input-group">
+                                            <span class="input-group-text bg-white px-3 ">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </span>
+                                            <input type="search" class="form-control bg-white" id="searchbar-value"
+                                                placeholder="Cerca o inizia una nuova chat">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CHATS LIST -->
+                            <div id="chats-list" class="bg-white overflow-y-scroll">
+
+                                <!-- ACCOUNTS -->
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="account d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION LEFT COLUMN END -->
+                        
+
+                        <!-- SECTION RIGHT COLUMN START ----------------------------------------------------------->
+                        <div class="col-8 px-0 border-start d-flex flex-column">
+
+                            <!-- HEADER -->
+                            <div id="header-right" class="d-flex justify-content-between align-content-center p-2 section-headers">
+
+                                <div class="d-flex gap-2 align-items-center ">
+                                    <figure class="avatars mb-0">
+                                        <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div>
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo accesso oggi alle 12:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-3 align-items-center pe-2 ">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+
+                            <!-- CURRENT CHAT -->
+                            <div id="current-chat" class="flex-grow-1 overflow-scroll ">
+
+                                <div class="d-flex justify-content-end ">
+                                    <div class="message sent-message p-2 rounded position-relative ">
+                                        <span class="message-text">Hai portato a spasso il cane?</span>
+                                        <span class="position-absolute time">15:30</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end ">
+                                    <div class="message sent-message p-2 rounded position-relative ">
+                                        <span class="message-text">Ricordati di stendere i panni</span>
+                                        <span class="position-absolute time">15:50</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-start">
+                                    <div class="message recieved-message p-2 rounded position-relative ">
+                                        <span class="message-text">Tutto fatto!</span>
+                                        <span class="position-absolute time">16:15</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- MESSAGE INPUT -->
+                            <div id="message-input" class="d-flex align-items-center ">
+                                <i class="fa-regular fa-face-smile px-3 "></i>
+                                <input type="text" class="form-control" id="newMessage">
+                                <i class="fa-solid fa-microphone px-3"></i>
+                            </div>
+
+                        </div>
+
+                        <!-- SECTION RIGHT COLUMN END -->
+
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
 
     </div>
 
@@ -20,8 +260,9 @@
 
 
 
+
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
     
 </body>
 </html>
