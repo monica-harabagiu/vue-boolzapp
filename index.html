@@ -86,7 +86,7 @@
                                     </figure>
                                     <div class="flex-grow-1 ">
                                         <p class="mb-0 ">{{element.name}}</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{element.messages[element.messages.length - 1].message}}
                                         </p>
                                     </div>
                                     <div>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
 
-                        <!-- SECTION LEFT COLUMN END -->
+                        <!-- !SECTION LEFT COLUMN END -->
                         
 
                         <!-- SECTION RIGHT COLUMN START ----------------------------------------------------------->
@@ -140,32 +140,24 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="d-flex justify-content-end ">
-                                    <div class="message sent-message p-2 rounded position-relative ">
-                                        <span class="message-text">Ricordati di stendere i panni</span>
-                                        <span class="position-absolute time">15:50</span>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex justify-content-start">
-                                    <div class="message received-message p-2 rounded position-relative ">
-                                        <span class="message-text">Tutto fatto!</span>
-                                        <span class="position-absolute time">16:15</span>
-                                    </div>
-                                </div> -->
-
                             </div>
 
                             <!-- MESSAGE INPUT -->
                             <div id="message-input" class="d-flex align-items-center ">
                                 <i class="fa-regular fa-face-smile px-3 "></i>
-                                <input type="text" class="form-control" id="newMessage">
+                                <input 
+                                v-model="newMessage"
+                                @keyup.enter="sendMessage(currentChat)"
+                                type="text" 
+                                class="form-control" 
+                                id="newMessage" 
+                                placeholder="Scrivi un messaggio">
                                 <i class="fa-solid fa-microphone px-3"></i>
                             </div>
 
                         </div>
 
-                        <!-- SECTION RIGHT COLUMN END -->
+                        <!-- !SECTION RIGHT COLUMN END -->
 
 
                     </div>
