@@ -5,6 +5,8 @@ const { createApp } = Vue
       return {
         currentChat: 0,
         newMessage: '',
+        searchedName: '',
+        searchedArray: [],
         contacts: [ 
             {
                 name: 'Michele',
@@ -158,9 +160,11 @@ const { createApp } = Vue
   }
 },
 methods: {
+
     changeChat(index){
         this.currentChat = index
     },
+
     sendMessage(index) {
 
         if (this.newMessage !== '') {
@@ -187,5 +191,17 @@ methods: {
         }, 1000)   
        
     },
+
+    filterNames(input, element) {
+
+        const letters = this.contacts.filter((el) => el.name.toLowerCase().includes(input.toLowerCase()))
+        this.searchedArray = letters
+
+        if (!this.contacts[element].some(searchedArray)) {
+            this.contacts[element].visible = false
+        }
+        
+    } 
+
   }
 }).mount('#app')

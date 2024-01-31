@@ -64,8 +64,13 @@
                                             <span class="input-group-text bg-white px-3 ">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </span>
-                                            <input type="search" class="form-control bg-white" id="searchbar-value"
-                                                placeholder="Cerca o inizia una nuova chat">
+                                            <input 
+                                            type="search" 
+                                            class="form-control bg-white" id="searchbar-value"
+                                            placeholder="Cerca o inizia una nuova chat"
+                                            v-model="searchedName" 
+                                            @input="filterNames(searchedName)"
+                                            >
                                         </div>
                                     </div>
                                 </div>
@@ -78,8 +83,9 @@
                                 <div 
                                 v-for="(element, index) in contacts"
                                 @click="changeChat(index)"
-                                :class="(currentChat == index) ? 'active-chat' : '' "
-                                class="account d-flex p-2 ">
+                                :class="[((currentChat == index) ? 'active-chat' : ''), ((element.visible == false) ? 'd-none ' : 'd-flex' )]"
+                                                              
+                                class="account p-2 ">
                                     <figure class="avatars mb-0 me-2 ">
                                         <img class="img-fluid rounded-circle" :src="element.avatar"
                                             alt="account profile picture">
@@ -172,7 +178,7 @@
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/main.js"></script>
     
