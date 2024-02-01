@@ -92,11 +92,14 @@
                                     </figure>
                                     <div class="flex-grow-1 ">
                                         <p class="mb-0 ">{{element.name}}</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{element.messages[element.messages.length - 1].message}}
+                                        <p
+                                        class="mb-0 text-secondary text-opacity-50 small-text">{{ element.messages.length > 0 ? element.messages[element.messages.length - 1].message : 'Non ci sono messaggi' }}
                                         </p>
+                                        
                                     </div>
                                     <div>
-                                        <span class="text-secondary text-opacity-50 small-text">{{element.messages[element.messages.length - 1].date}}</span>
+                                        <span 
+                                        class="text-secondary text-opacity-50 small-text">{{ element.messages.length > 0 ? element.messages[element.messages.length - 1].date : '' }}</span>
                                     </div>
                                 </div>
 
@@ -135,7 +138,9 @@
                             <div id="current-chat" class="flex-grow-1 overflow-scroll ">
 
                                 <div
+                                v-if="contacts[currentChat].messages.length !== 0"
                                 v-for="(element, index) in contacts[currentChat].messages"
+                                :key="index"
                                 :class="(element.status == 'sent') ? 'justify-content-end' : 'justify-content-start'"
                                 class="d-flex">
                                     <div 
@@ -150,10 +155,16 @@
                                         v-if="currentMessage === element"
                                         class="message-options rounded position-absolute shadow overflow-hidden">
                                             <span>Message info</span>
-                                            <span>Delete message</span>
+                                            <span
+                                            @click="deleteMessage(index, currentChat)"
+                                            >Delete message</span>
                                         </div>
                                         <span class="position-absolute time">{{element.date}}</span>
                                     </div>
+                                </div>
+
+                                <div v-else>
+                                    <h3 class="no-messages text-center">- Non ci sono messaggi -</h3>
                                 </div>
 
                             </div>

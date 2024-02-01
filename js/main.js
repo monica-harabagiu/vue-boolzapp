@@ -213,13 +213,6 @@ methods: {
                 element.visible = false
             }
         })
-
-        // const letters = this.contacts.filter((el) => el.name.toLowerCase().includes(input.toLowerCase()))
-        // this.searchedArray = letters
-
-        // if (!this.contacts[element].some(searchedArray)) {
-        //     this.contacts[element].visible = false
-        // }
         
     },
 
@@ -232,6 +225,10 @@ methods: {
         }
         
           
+    },
+
+    deleteMessage(element, arr) {
+        this.contacts[arr].messages.splice(element, 1)
     }
 
   }

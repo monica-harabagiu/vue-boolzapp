@@ -119,6 +119,11 @@ i {
     color: #B1B1B1;
 }
 
+.no-messages {
+    color: #B1B1B1;
+    font-size: 1rem;
+}
+
 #current-chat .sent-message .message-text {
     margin-right: 30px;
     margin-bottom: 30px;
