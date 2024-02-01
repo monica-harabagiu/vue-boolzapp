@@ -69,7 +69,7 @@
                                             class="form-control bg-white" id="searchbar-value"
                                             placeholder="Cerca o inizia una nuova chat"
                                             v-model="searchedName" 
-                                            @input="filterNames(searchedName)"
+                                            @input="searchName"
                                             >
                                         </div>
                                     </div>
@@ -82,9 +82,9 @@
                                 <!-- ACCOUNTS -->
                                 <div 
                                 v-for="(element, index) in contacts"
+                                v-show="element.visible"
                                 @click="changeChat(index)"
-                                :class="[((currentChat == index) ? 'active-chat' : ''), ((element.visible == false) ? 'd-none ' : 'd-flex' )]"
-                                                              
+                                :class="[((currentChat == index) ? 'active-chat' : ''), (element.visible ? 'd-flex' : '' )]"
                                 class="account p-2 ">
                                     <figure class="avatars mb-0 me-2 ">
                                         <img class="img-fluid rounded-circle" :src="element.avatar"

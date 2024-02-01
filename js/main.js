@@ -6,7 +6,7 @@ const { createApp } = Vue
         currentChat: 0,
         newMessage: '',
         searchedName: '',
-        searchedArray: [],
+        // searchedArray: [],
         contacts: [ 
             {
                 name: 'Michele',
@@ -192,14 +192,23 @@ methods: {
        
     },
 
-    filterNames(input, element) {
+    searchName() {
 
-        const letters = this.contacts.filter((el) => el.name.toLowerCase().includes(input.toLowerCase()))
-        this.searchedArray = letters
+        this.contacts.forEach( (element) => {
 
-        if (!this.contacts[element].some(searchedArray)) {
-            this.contacts[element].visible = false
-        }
+            if (element.name.toLowerCase().includes(this.searchedName.toLowerCase())) {
+                element.visible = true
+            } else {
+                element.visible = false
+            }
+        })
+
+        // const letters = this.contacts.filter((el) => el.name.toLowerCase().includes(input.toLowerCase()))
+        // this.searchedArray = letters
+
+        // if (!this.contacts[element].some(searchedArray)) {
+        //     this.contacts[element].visible = false
+        // }
         
     } 
 
