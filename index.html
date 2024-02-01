@@ -140,8 +140,18 @@
                                 class="d-flex">
                                     <div 
                                     :class="(element.status == 'sent') ? 'sent-message' : 'received-message'"
-                                    class="message p-2 rounded position-relative ">
+                                    class="message p-2 rounded position-relative"
+                                    >
                                         <span class="message-text">{{element.message}}</span>
+                                        <i 
+                                        @click="showMessageOptions(element)"
+                                        class="fa-solid fa-chevron-down position-absolute"></i>
+                                        <div 
+                                        v-if="currentMessage === element"
+                                        class="message-options rounded position-absolute shadow overflow-hidden">
+                                            <span>Message info</span>
+                                            <span>Delete message</span>
+                                        </div>
                                         <span class="position-absolute time">{{element.date}}</span>
                                     </div>
                                 </div>

@@ -77,12 +77,39 @@ i {
     min-height: 40px;
 }
 
+#current-chat .message:hover .fa-chevron-down {
+    display: block;
+    cursor: pointer;
+}
+
 #current-chat .sent-message {
     background-color: #D5F9BA;
 }
 
 #current-chat .received-message {
     background-color: white;
+}
+
+.fa-chevron-down {
+    top: 5px;
+    right: 5px;
+    display: none;
+}
+
+.message-options {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.message-options span {
+    padding: 10px 30px;
+}
+
+.message-options span:hover {
+    background-color: #E9EBEB;
+    cursor: pointer;
 }
 
 #current-chat .time {

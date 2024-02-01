@@ -6,6 +6,7 @@ const { createApp } = Vue
         currentChat: 0,
         newMessage: '',
         searchedName: '',
+        currentMessage: null,
         // searchedArray: [],
         contacts: [ 
             {
@@ -220,7 +221,18 @@ methods: {
         //     this.contacts[element].visible = false
         // }
         
-    } 
+    },
+
+    showMessageOptions(index) {
+
+        if (this.currentMessage === index) {
+            this.currentMessage = null
+        } else {
+            this.currentMessage = index
+        }
+        
+          
+    }
 
   }
 }).mount('#app')
