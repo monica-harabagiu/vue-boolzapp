@@ -198,7 +198,7 @@ methods: {
         let DateTime = luxon.DateTime
         const now = DateTime.local()
 
-        const formattedDateTime = now.toFormat('dd/mm/yyyy hh:mm')
+        const formattedDateTime = now.toFormat('dd/MM/yyyy hh:mm')
 
         return formattedDateTime
     },
